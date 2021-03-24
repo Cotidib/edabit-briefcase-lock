@@ -43,7 +43,7 @@ namespace Program
             int[] targetNumbers = target.Select(x => (int)char.GetNumericValue(x)).ToArray();
             //Array.ForEach(targetNumbers, Console.WriteLine);
 
-            //Compare diference between same rolling-number
+            //Compare difference between same rolling-number
             for(int i=0; i<currentNumbers.Length; i++){
                 //Console.WriteLine(targetNumbers[i] - currentNumbers[i]);
                 int elementSubstraction = targetNumbers[i] - currentNumbers[i];
