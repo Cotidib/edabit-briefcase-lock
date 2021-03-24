@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Linq;
 
 
 namespace Program
@@ -8,8 +9,8 @@ namespace Program
         static void Main(string[] args)
         {
             MinTurns("4089", "5672");
-            //MinTurns("1111", "1100");
-            //MinTurns("2391", "4984");
+            MinTurns("1111", "1100");
+            MinTurns("2391", "4984");
             
         }
 
@@ -36,15 +37,13 @@ namespace Program
             int totalRolls = 0;
 
             //Convert to arrays of ints
-            string[] currentSplitted = current.Split();
-            int[] currentNumbers = Array.ConvertAll(currentSplitted, int.Parse);
-        
+            int[] currentNumbers = current.Select(x => (int)char.GetNumericValue(x)).ToArray();
             //Array.ForEach(currentNumbers, Console.WriteLine);
             
-            string[] targetSplitted = target.Split();
-            int[] targetNumbers = Array.ConvertAll(targetSplitted, int.Parse);
+            int[] targetNumbers = target.Select(x => (int)char.GetNumericValue(x)).ToArray();
+            //Array.ForEach(targetNumbers, Console.WriteLine);
 
-            //Compare difference between same rolling-number
+            //Compare diference between same rolling-number
             for(int i=0; i<currentNumbers.Length; i++){
                 //Console.WriteLine(targetNumbers[i] - currentNumbers[i]);
                 int elementSubstraction = targetNumbers[i] - currentNumbers[i];
