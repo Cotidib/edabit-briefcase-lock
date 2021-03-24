@@ -44,7 +44,7 @@ namespace Program
             string[] targetSplitted = target.Split();
             int[] targetNumbers = Array.ConvertAll(targetSplitted, int.Parse);
 
-            //Compare diference between same rolling-number
+            //Compare difference between same rolling-number
             for(int i=0; i<currentNumbers.Length; i++){
                 //Console.WriteLine(targetNumbers[i] - currentNumbers[i]);
                 int elementSubstraction = targetNumbers[i] - currentNumbers[i];
